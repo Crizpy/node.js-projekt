@@ -1,8 +1,10 @@
-var login = require("./routes/login")
+var main = require("./routes/main")
+var steamAuth = require("./routes/steamAuthenticator")
 
 function initiateRouting(app) {
 
-    app.use("/", login)
+    app.use("/", main)
+    app.use("/auth",steamAuth)
 
 }
 
