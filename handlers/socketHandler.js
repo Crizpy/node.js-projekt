@@ -3,6 +3,8 @@ function initialiseIOSocketHandlers(io) {
     io.on('connection', function(socket) {
 
         console.log('Connection made. socket.id='+socket.id+' . pid = '+process.pid);
+        console.log(socket.handshake.session)
+        console.log("kappachino amk")
 
         socket.on('chat_in', function(msg) {
             console.log('emitting message: '+msg+' . socket.id='+socket.id+' . pid = '+process.pid);

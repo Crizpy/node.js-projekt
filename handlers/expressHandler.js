@@ -3,13 +3,27 @@ var routing = require("../routing/initiateRouting")
 
 var cookieParser = require('cookie-parser');
 var path = require('path');
-var session = require("express-session")({
-    secret: config.cookie.secret,
-    resave: true,
-    saveUninitialized: true
-}), sharedsession = require("express-socket.io-session");
 
-//session.identifier
+/*var session = require("express-session")({
+    key: 'steam_session',
+    secret: config.cookie.secret,
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+}), sharedsession = require("express-socket.io-session");*/
+
+
+var session = require("express-session")
+var MySQLStore = require("express-mysql-session")(session)
+var sessionStore = new MySQLStore(config.database.connection)
+
+session = session({
+    key: 'steam_session',
+    secret: config.cookie.secret,
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+}), sharedsession = require("express-socket.io-session");
 
 function initialiseExpressHandlers(app,io) {
 
@@ -17,7 +31,9 @@ function initialiseExpressHandlers(app,io) {
     app.set('view engine', 'pug');
 
     app.use(cookieParser());
+
     app.use(session);
+
     io.use(sharedsession(session))
 
     routing(app)

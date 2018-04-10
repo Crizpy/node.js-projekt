@@ -8,6 +8,8 @@ router.get('/', function(req, res) {
     if(req.session.steam64) {
         res.render('main')
     } else {
+        //req.session.steam64 = "11111111111"
+        //req.session.destroy()
         res.render('loginPage');
     }
 
