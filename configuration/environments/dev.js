@@ -11,7 +11,7 @@ config.steam.apikey = "74C1E93DA3D6A5E45C6724D9EE9969F2"
 
 config.system.cores = require('os').cpus().length
 config.system.realm = ""
-config.system.env = "local"
+config.system.env = "dev"
 
 config.web.port = 8081
 

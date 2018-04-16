@@ -1,3 +1,5 @@
+var config = require("./configuration/default")
+
 var recluster = require('recluster'),
     path = require('path'),
     sticky = require('sticky-listen')
@@ -24,6 +26,6 @@ var balancer = sticky.createBalancer({
   retryDelay: 100
 });
 
-balancer.listen(8081, function() {
-  console.log("Sticky balancer listening on port", 8081);
+balancer.listen(config.web.port, function() {
+  console.log("Sticky balancer listening on port", config.web.port);
 });
