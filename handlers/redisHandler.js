@@ -1,6 +1,6 @@
 var redis = require('redis');
 var redisAdapter = require('socket.io-redis');
-var config = require("configuration/default")
+var config = require("../configuration/default")
 
 function initialiseRedisHandler(io) {
 
