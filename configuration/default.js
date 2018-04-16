@@ -6,6 +6,7 @@ config.cookie = {}
 config.database = {}
 config.steam = {}
 config.email = {}
+config.redis = {}
 
 config.steam.apikey = "74C1E93DA3D6A5E45C6724D9EE9969F2"
 
@@ -20,6 +21,9 @@ config.email.password =
 config.email.to =
 config.email.from =
 config.email.service =
+
+config.redis.url = "redis://35.189.248.208:6379"
+config.redis.password = "puYMi4vDf9bc"
 
 config.cookie.secret = "1i!5nib!235b!uib2!35Afa"
 
