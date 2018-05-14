@@ -74,7 +74,7 @@ router.get('/return', passport.authenticate('openid'),
                     request.session.steamAvatarmedium = basepath['avatarmedium'];
                     request.session.steamAvatarfull = basepath['avatarfull'];
 
-                    response.redirect('/coinflip');
+                    response.redirect('/');
 
                 });
             });
