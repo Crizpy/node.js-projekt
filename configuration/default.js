@@ -5,16 +5,24 @@ config.system = {}
 config.cookie = {}
 config.database = {}
 config.steam = {}
+config.steam.mock = {};
 config.email = {}
 config.redis = {}
 
 config.steam.apikey = "74C1E93DA3D6A5E45C6724D9EE9969F2"
 
+config.steam.mock.steam64 = "123456789987"
+config.steam.mock.steamName = "Peter Pan"
+config.steam.mock.steamProfileurl = "https://steamcommunity.com/id/crispysheesh"
+config.steam.mock.steamAvatar = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/58/58e76c55904b2159f5fe1802a6f9e9f1f373510b_full.jpg"
+config.steam.mock.steamAvatarmedium = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/58/58e76c55904b2159f5fe1802a6f9e9f1f373510b_full.jpg"
+config.steam.mock.steamAvatarfull = "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/58/58e76c55904b2159f5fe1802a6f9e9f1f373510b_full.jpg"
+
 config.system.cores = require('os').cpus().length
 config.system.realm = ""
 config.system.env = "local"
 
-config.web.port = 8081
+config.web.port = 8089
 
 config.email.username =
 config.email.password =
